@@ -1,0 +1,16 @@
+version: '2'
+services:
+    frontend:
+        image: ithelp/frontend:1.0.0
+        container_name: ithelp.frontend
+        ports:
+            - "80:80"
+    backend:
+        image: ithelp/backend:1.0.0
+        container_name: ithelp.backend
+        ports:
+            - "3001:3001"
+        command: "npm run start"
+        environment:
+            PORT: 3001
+            NODE_ENV: "development"
